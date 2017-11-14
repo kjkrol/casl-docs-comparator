@@ -28,5 +28,9 @@ nbdist/
 ### Logs ###
 *.log
 
+### data ###
+de_artists_good_list_modified.xlsx
+selection_of_artist_mtv_de.csv
+
 .DS_Store
 =======
