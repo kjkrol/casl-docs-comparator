@@ -3,14 +3,18 @@ package pl.dk.cdocs.repo;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import lombok.Getter;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import pl.dk.cdocs.model.ContentTypes;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 import static com.mongodb.client.model.Filters.and;
@@ -22,7 +26,6 @@ import static pl.dk.cdocs.model.DocumentProperties.MASTER_LINK;
 
 @Service
 public class ContentRecords {
-
 
     @Value("${spring.data.mongodb.database}")
     @Getter
@@ -48,10 +51,9 @@ public class ContentRecords {
         mongoClient.close();
     }
 
-    private MongoCollection<Document> contentRecords() {
+    public MongoCollection<Document> contentRecords() {
         return mongoDatabase.getCollection(contentRecordsCollectionName);
     }
-
 
     public Document findContent(UUID id) {
         return contentRecords().find(eq(ID, id))
@@ -65,14 +67,12 @@ public class ContentRecords {
     public FindIterable<Document> findByLinksAndContentType(UUID id, String contentType) {
         return contentRecords().find(
                 and(
-                    eq(CONTENT_TYPE, contentType),
-                    eq(LINKS, id)
+                        eq(CONTENT_TYPE, contentType),
+                        eq(LINKS, id)
                 ));
     }
 
     public FindIterable<Document> findCmrs(UUID id) {
         return contentRecords().find(eq(MASTER_LINK, id));
     }
-
-
 }

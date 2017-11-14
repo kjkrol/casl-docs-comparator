@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.UUID;
 
-@Service
+//@Service
 @Profile("!test")
 class ContentRecordsPlay {
 
@@ -24,7 +24,7 @@ class ContentRecordsPlay {
         this.contentRecords = contentRecords;
     }
 
-    @PostConstruct
+//    @PostConstruct
     void postConstruct() throws Exception {
         Reader artistsReader =
                 new BufferedReader(new InputStreamReader(

@@ -28,7 +28,11 @@ public class ContentTypes {
 
     public static final String PERSON_CONTEXT = "Standard:PersonContext";
 
+    public static final String PERSON_CONTEXT_CMR = "Standard:PersonContextCMR";
+
     public static final String PERSON = "Standard:Person";
+
+    public static final String PERSON_CMR = "Standard:PersonCMR";
 
     public static final String STANDARDS = "Standard:Standards";
 

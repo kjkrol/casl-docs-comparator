@@ -5,7 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.web.WebAppConfiguration
-import pl.dk.cdocs.CaslDocComparatorApp
+
 import spock.lang.Specification
 import spock.lang.Subject
 

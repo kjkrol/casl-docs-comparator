@@ -1,13 +1,11 @@
-package pl.dk.cdocs;
+package kjkrol.casl.person.stats;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CaslDocComparatorApp {
-
+public class CaslPersonsStatsApp {
     public static void main(String[] args) {
-        SpringApplication.run(CaslDocComparatorApp.class, args);
+        SpringApplication.run(CaslPersonsStatsApp.class, args);
     }
-
 }
